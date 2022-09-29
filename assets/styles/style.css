@@ -76,6 +76,8 @@ nav li {
 nav {
     background-color: rgb(5, 44, 44);
     padding: 5px;
+    position: sticky;
+    top: 0;
 }
 
 main {
@@ -101,6 +103,11 @@ aside {
         padding: 0;
     }
 }
+
+header {
+    display: inline;
+}
+
 
 
 
