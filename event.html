@@ -3,7 +3,6 @@
 
 <head>
   <title>Event World</title>
-
   <style>
     .contents {
       position: fixed;
@@ -17,30 +16,30 @@
     #generateButton {
       margin-top: 5px;
       margin-bottom: 15px;
+      ;
     }
   </style>
 </head>
 
-<body onload="welcome()">
+<body>
   <div class="contents" align="center" hidden>
-    <button id="incrementButton" onclick="increment()">Tekan Aku :)</button>
-    <h3>
-      Kamu sudah menekan tombol di atas sebanyak <span id="count">0</span>
-    </h3>
+    <button id="incrementButton">Tekan Aku :)</button>
+    <h3>Kamu sudah menekan tombol di atas sebanyak <span id="count">0</span></h3>
   </div>
 
   <script>
-    // Kode JavaScript kita
     function increment() {
       document.getElementById('count').innerText++;
 
       if (document.getElementById('count').innerText == 7) {
         const hiddenMessage = document.createElement('h4');
-        hiddenMessage.innerText = 'Selamat anda menemukan hadiah tersembunyi...';
-        const img = document.createElement('img');
-        img.setAttribute('src', 'https://i.ibb.co/0V49VRZ/catto.jpg');
+        hiddenMessage.innerText = 'Selamat! Anda menemukan hadiah tersembunyi...';
+
+        const image = document.createElement('img');
+        image.setAttribute('src', 'https://i.ibb.co/0V49VRZ/catto.jpg');
+
         const contents = document.querySelector('.contents');
-        contents.appendChild(hiddenMessage).appendChild(img);
+        contents.appendChild(hiddenMessage).appendChild(image);
       }
     }
 
@@ -49,8 +48,10 @@
       const contents = document.querySelector('.contents');
       contents.removeAttribute('hidden');
     }
-    // document.getElementById('incrementButton').onclick = increment;
-    // document.body.onload = welcome;
+
+  // kita akan menulis kode menggunakan addEventListener di sini
+  window.addEventListener('load', welcome);
+  document.getElementById('incrementButton').addEventListener('click', increment);
   </script>
 </body>
 
